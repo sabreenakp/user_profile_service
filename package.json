@@ -1,0 +1,38 @@
+{
+  "name": "user_profile_service",
+  "version": "1.0.0",
+  "description": "user profile backend service",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -r ts-node/register src/test/**/*.test.ts",
+    "start": "tsnd --respawn src/app.ts",
+    "dev": "nodemon src/app.ts",
+    "dist": "node dist/app.js",
+    "build": "tsc -p .",
+    "lint": "eslint src/app.ts --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://sabreenakp@github.com/sabreenakp/user_profile_service.git"
+  },
+  "author": "sabreena",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sabreenakp/user_profile_service/issues"
+  },
+  "homepage": "https://github.com/sabreenakp/user_profile_service#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.31",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
+    "eslint": "^8.14.0",
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.7.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.6.4"
+  }
+}
