@@ -4,7 +4,7 @@ The main purpose of this repository is to manage user data
 #Pre-reqs
 
 
-*Install Node.js
+Install Node.js
 
 
 #Getting Started
@@ -27,4 +27,5 @@ npm install
 
 
 npm run build
+
 npm start
