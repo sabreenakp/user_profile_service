@@ -1,8 +1,8 @@
 import express, { Application, Request, Response, NextFunction } from "express";
 import { json, urlencoded } from "body-parser";
 import cors from "cors";
-import config from './utils/config'
-import {run} from './services/database.service'
+import config from "./utils/config";
+import { dbConnector } from "./services/database.service";
 import routes from "./routes/route";
 const app: Application = express();
 // cors
@@ -12,7 +12,7 @@ app.use(json());
 app.use(urlencoded({ extended: true }));
 //route
 app.use("/api", routes);
-app.use(run)
+app.use(dbConnector);
 // 404
 app.get("*", (req: Request, res: Response) => {
   res.status(404).send({ message: "Unauthorized!", status: false });

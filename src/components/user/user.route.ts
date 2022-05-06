@@ -3,8 +3,6 @@ import * as userController from "./user.controller";
 
 const userRoutes = Router();
 
-userRoutes.post("/", (req: Request, res: Response) => {
-  userController.addUser(req.body, res);
-});
+userRoutes.post("/", userController.addUser);
 
 export default userRoutes;

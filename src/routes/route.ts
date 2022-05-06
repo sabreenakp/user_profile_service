@@ -8,6 +8,6 @@ routes.get("/health", (req: Request, res: Response) => {
     .status(200)
     .send({ message: "Service running successfully", status: true });
 });
-routes.use(apiVersions[0] + "/users", userRoutes);
+routes.use("/"+apiVersions[0] + "/users", userRoutes);
 
 export default routes;
