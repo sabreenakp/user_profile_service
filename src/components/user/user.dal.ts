@@ -1,6 +1,7 @@
 import {
   FetchUserIData,
   ResponseData,
+  signinIData,
   UserData,
 } from "../../interfaces/user.interface";
 import { User } from "../../services/database.service";
@@ -59,6 +60,29 @@ export const fetchUser = async (userData: FetchUserIData) => {
   try {
     const result = await User.findOne({
       _id: userData.id,
+    });
+    responseData = {
+      status: true,
+      message: "success",
+      statusCode: 200,
+      data: result,
+    };
+    return responseData;
+  } catch (error) {
+    responseData = {
+      message: "Please try again",
+      statusCode: 500,
+      status: false,
+      error,
+    };
+    return responseData;
+  }
+};
+export const fetchUserByEmail = async (userData: signinIData) => {
+  let responseData: ResponseData;
+  try {
+    const result = await User.findOne({
+      email: userData.email,
     });
     responseData = {
       status: true,

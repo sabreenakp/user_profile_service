@@ -34,3 +34,8 @@ export interface verifyIData {
   email: string;
   code: string;
 }
+
+export interface signinIData {
+  email: string;
+  password: string;
+}
