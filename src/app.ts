@@ -1,6 +1,7 @@
-import express, { Application, Request, Response, NextFunction } from "express";
+import express, { Application, Request, Response } from "express";
 import { json, urlencoded } from "body-parser";
 import cors from "cors";
+import fileUpload from 'express-fileupload';
 import config from "./utils/config";
 import { dbConnector } from "./services/database.service";
 import routes from "./routes/route";
@@ -10,6 +11,7 @@ app.use(cors());
 // body parsing middleware.
 app.use(json());
 app.use(urlencoded({ extended: true }));
+app.use(fileUpload());
 //route
 app.use("/api", routes);
 app.use(dbConnector);
