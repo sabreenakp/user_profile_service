@@ -16,8 +16,9 @@ export async function dbConnector() {
       statusCode: 200,
     };
   } catch (err: any) {
+    console.log("Database connection failed!", err)
     return {
-      message: err.details[0].message || "Database connection failed!",
+      message: "Database connection failed!",
       status: false,
       statusCode: 500,
     };
