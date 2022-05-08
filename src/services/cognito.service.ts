@@ -39,9 +39,10 @@ export default class Cognito {
       };
       return response;
     } catch (error) {
+      let err_message = JSON.parse(JSON.stringify(error)).message;
       const response: ResponseData = {
         status: false,
-        message: "Please try again",
+        message: err_message || "Please try again",
         statusCode: 500,
         error,
       };
@@ -71,9 +72,10 @@ export default class Cognito {
       };
       return response;
     } catch (error) {
+      let err_message = JSON.parse(JSON.stringify(error)).message;
       const response: ResponseData = {
         status: false,
-        message: "Please try again",
+        message: err_message || "Please try again",
         statusCode: 500,
         error,
       };
@@ -100,9 +102,10 @@ export default class Cognito {
       };
       return response;
     } catch (error) {
+      let err_message = JSON.parse(JSON.stringify(error)).message;
       const response: ResponseData = {
         status: false,
-        message: "Please try again",
+        message: err_message || "Please try again",
         statusCode: 500,
         error,
       };

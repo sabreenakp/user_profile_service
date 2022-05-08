@@ -10,6 +10,7 @@ export async function dbConnector() {
   try {
     // Connect to MongoDB
     await connect(config.DATABASE.HOST + config.DATABASE.NAME);
+    console.log("Database connection success!")
     return {
       message: "Success",
       status: true,

@@ -27,7 +27,7 @@ export const addUser = async (req: Request, res: Response) => {
       phone_number: Joi.string().max(20).required().label("Phone Number"),
       summary: Joi.string().label("Summary"),
       file_name: Joi.string().required().label("File Name"),
-      file_data: Joi.any().required().label("File Data"),
+      file_data: Joi.any().required().label("File"),
       password: Joi.string().required().label("Password"),
     });
     const validation: ResponseData = await joiValidation(schema, userInputData);
